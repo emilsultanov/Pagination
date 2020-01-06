@@ -50,6 +50,21 @@ function pagination__buttons_hundler() {
 }
 
 
+let three__dots = document.querySelectorAll('.threeDots[data-pagination-direct]');
+
+for (dots of three__dots) {
+   dots.addEventListener('click', three__dots_hundler);
+}
+
+function three__dots_hundler() {
+
+   let pagination__direct = this.dataset.paginationDirect;
+   createPagination(parameters, index, pagination__direct);
+
+}
+
+
+
 function createPagination(params, start, direct = 'next') {
 
    const { totalData, dataPerPage, paginationItem } = params;
